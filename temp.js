@@ -260,7 +260,9 @@ jQuery(document).ready(function () {
     });
   }
   jQuery(".AdClicks").each(bindHandlerToHref);
+});
 
+jQuery(document).ready(function () {
   // Admin functions menu
   if (
     window.innerWidth >= 769 &&
