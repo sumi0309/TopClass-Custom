@@ -271,14 +271,18 @@ jQuery(document).ready(function () {
   ) {
     console.log("Admin functions menu enabled");
     const navbar = document.querySelector("#sidr-id-tc-nav-menu-list");
+    console.log("Got navbar:", navbar);
     if (!navbar) return;
 
     const adminItems = Array.from(navbar.children).filter(
       (li) => li.childElementCount > 1
     );
-    adminItems.forEach((item) => navbar.removeChild(item));
 
+    console.log("Admin items found:", adminItems);
+    adminItems.forEach((item) => navbar.removeChild(item));
+    console.log("Filtered admin items:", adminItems);
     if (!adminItems.length) return;
+    console.log("Creating admin functions menu");
 
     const adminLi = document.createElement("li");
     adminLi.className = "admin-functions-menu";
@@ -288,6 +292,7 @@ jQuery(document).ready(function () {
         <ul class="sidr-class-dropdown-menu sidr-class-pull-left" style="display:none"></ul>
     `;
     const adminUl = adminLi.querySelector("ul");
+    console.log("Admin submenu created:", adminUl);
 
     adminItems.forEach((item) => {
       const submenu = item.querySelector("ul");
@@ -310,6 +315,7 @@ jQuery(document).ready(function () {
       }
       adminUl.appendChild(item);
     });
+    console.log("Admin submenu populated:", adminUl);
 
     adminLi.onmouseenter = () => {
       adminUl.style.display = "block";
@@ -322,8 +328,9 @@ jQuery(document).ready(function () {
       adminUl.style.left = "0";
       adminUl.style.right = "auto";
     };
-
+    console.log("Admin functions menu ready");
     navbar.insertBefore(adminLi, navbar.lastElementChild || null);
+    console.log("Admin functions menu added to navbar");
   }
 
   //footer
