@@ -261,7 +261,6 @@ jQuery(document).ready(function () {
   }
   jQuery(".AdClicks").each(bindHandlerToHref);
 });
-jQuery(document).ready(function () {
            if (
         window.innerWidth >= 769 &&
         window.TCIsAdmin?.() === 4 &&
@@ -338,8 +337,6 @@ jQuery(document).ready(function () {
         navbar.insertBefore(adminLi, navbar.lastElementChild || null);
         console.log("Admin functions menu added to navbar");
     }
-});
-
 
 jQuery(document).ready(function () {
         //footer
