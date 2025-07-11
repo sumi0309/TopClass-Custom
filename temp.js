@@ -269,6 +269,7 @@ jQuery(document).ready(function () {
     window.TCIsAdmin?.() === 4 &&
     window.TCUserRoles === 15
   ) {
+    console.log("Admin functions menu enabled");
     const navbar = document.querySelector("#sidr-id-tc-nav-menu-list");
     if (!navbar) return;
 
