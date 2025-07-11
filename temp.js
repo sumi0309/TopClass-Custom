@@ -262,9 +262,8 @@ jQuery(document).ready(function () {
   jQuery(".AdClicks").each(bindHandlerToHref);
 });
 
-jQuery(function () {
-    // Admin functions menu
-    if (
+document.addEventListener("DOMContentLoaded", function () {
+        if (
         window.innerWidth >= 769 &&
         window.TCIsAdmin?.() === 4 &&
         window.TCUserRoles === 15
@@ -340,8 +339,10 @@ jQuery(function () {
         navbar.insertBefore(adminLi, navbar.lastElementChild || null);
         console.log("Admin functions menu added to navbar");
     }
+});
 
-    //footer
+jQuery(document).ready(function () {
+        //footer
     const footerHTML = `
         <footer class="footer-custom">
             <div class="footer-main">
