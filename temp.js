@@ -279,9 +279,14 @@ jQuery(function () {
         );
 
         console.log("Admin items found:", adminItems);
-        adminItems.forEach((item) => navbar.removeChild(item));
-        console.log("Filtered admin items:", adminItems);
         if (!adminItems.length) return;
+        // Remove admin items from navbar before re-adding to admin menu
+        adminItems.forEach((item) => {
+            if (item.parentNode === navbar) {
+                navbar.removeChild(item);
+            }
+        });
+        console.log("Filtered admin items:", adminItems);
         console.log("Creating admin functions menu");
 
         const adminLi = document.createElement("li");
@@ -303,9 +308,12 @@ jQuery(function () {
 
                 item.onmouseenter = () => {
                     submenu.style.display = "block";
-                    const { right } = submenu.getBoundingClientRect();
-                    submenu.style.left = right > window.innerWidth ? "auto" : "100%";
-                    submenu.style.right = right > window.innerWidth ? "100%" : "auto";
+                    // Defensive: check submenu exists before using getBoundingClientRect
+                    if (submenu) {
+                        const { right } = submenu.getBoundingClientRect();
+                        submenu.style.left = right > window.innerWidth ? "auto" : "100%";
+                        submenu.style.right = right > window.innerWidth ? "100%" : "auto";
+                    }
                 };
                 item.onmouseleave = () => {
                     submenu.style.display = "none";
