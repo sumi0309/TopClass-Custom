@@ -262,6 +262,62 @@ jQuery(document).ready(function () {
   jQuery(".AdClicks").each(bindHandlerToHref);
 });
 
+jQuery(document).ready(function () {
+        //footer
+    const footerHTML = `
+        <footer class="footer-custom">
+            <div class="footer-main">
+
+            <div class="footer-logo">
+                    <a href="/" class="footer-logo-link">
+                        <img class="footer-logo-img" src="https://public.openwatercdn.com/778725b5-7954-45f8-bc5d-2cedcea7d6ab/7825847b-889f-4894-a73a-8dea0e60680a.png" alt="Banner Logo">
+                    </a>
+                    </div>
+
+                <div class="footer-logo-nav">
+                    <ul class="footer-nav">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Membership</a></li>
+                        <li><a href="#">Events</a></li>
+                    </ul>
+                    <ul class="footer-nav">
+                        <li><a href="#">News</a></li> 
+                        <li><a href="#">Store</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-account-social">
+                    <div class="footer-account">
+                        <div class="footer-account-links">
+                            <a href="https://johnconsulting.topclasslms.com/topclass/topclass.do?logout" class="footer-account-link" style="margin-bottom: 0px;">
+                                <span class="footer-account-icon logout-icon"></span>
+                                LOGOUT
+                            </a>
+                        </div>
+                        <div class="footer-account-links">
+                            <a href="https://johnconsulting.topclasslms.com/topclass/topclass.do?expand-userprofileandsettingsmain#account" class="footer-account-link">
+                                <span class="footer-account-icon account-icon"></span>
+                                MY ACCOUNT
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-social">
+                        <span class="footer-social-label" style="font-size:14px">CONNECT WITH US</span>
+                        <a href="https://www.linkedin.com/company/agribusiness-association-of-australia/" class="SocialSprite LinkedInIcon LargeButtons" title="Visit our LinkedIn page" target="_blank"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Agro Business International</span>
+                <a href="#" class="footer-bottom-link">Terms &amp; Conditions</a>
+                <a href="#" class="footer-bottom-link">Privacy Policy</a>
+                <a href="#" class="footer-bottom-link">Contact Us</a>
+            </div>
+        </footer>
+        `;
+
+    document.body.insertAdjacentHTML("beforeend", footerHTML);
+});
 
 window.onload = function () {
        if (
@@ -342,59 +398,3 @@ window.onload = function () {
     }
 }
 
-jQuery(document).ready(function () {
-        //footer
-    const footerHTML = `
-        <footer class="footer-custom">
-            <div class="footer-main">
-
-            <div class="footer-logo">
-                    <a href="/" class="footer-logo-link">
-                        <img class="footer-logo-img" src="https://public.openwatercdn.com/778725b5-7954-45f8-bc5d-2cedcea7d6ab/7825847b-889f-4894-a73a-8dea0e60680a.png" alt="Banner Logo">
-                    </a>
-                    </div>
-
-                <div class="footer-logo-nav">
-                    <ul class="footer-nav">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Membership</a></li>
-                        <li><a href="#">Events</a></li>
-                    </ul>
-                    <ul class="footer-nav">
-                        <li><a href="#">News</a></li> 
-                        <li><a href="#">Store</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-account-social">
-                    <div class="footer-account">
-                        <div class="footer-account-links">
-                            <a href="https://johnconsulting.topclasslms.com/topclass/topclass.do?logout" class="footer-account-link" style="margin-bottom: 0px;">
-                                <span class="footer-account-icon logout-icon"></span>
-                                LOGOUT
-                            </a>
-                        </div>
-                        <div class="footer-account-links">
-                            <a href="https://johnconsulting.topclasslms.com/topclass/topclass.do?expand-userprofileandsettingsmain#account" class="footer-account-link">
-                                <span class="footer-account-icon account-icon"></span>
-                                MY ACCOUNT
-                            </a>
-                        </div>
-                    </div>
-                    <div class="footer-social">
-                        <span class="footer-social-label" style="font-size:14px">CONNECT WITH US</span>
-                        <a href="https://www.linkedin.com/company/agribusiness-association-of-australia/" class="SocialSprite LinkedInIcon LargeButtons" title="Visit our LinkedIn page" target="_blank"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>© 2025 Agro Business International</span>
-                <a href="#" class="footer-bottom-link">Terms &amp; Conditions</a>
-                <a href="#" class="footer-bottom-link">Privacy Policy</a>
-                <a href="#" class="footer-bottom-link">Contact Us</a>
-            </div>
-        </footer>
-        `;
-
-    document.body.insertAdjacentHTML("beforeend", footerHTML);
-});
