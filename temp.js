@@ -263,19 +263,19 @@ jQuery(document).ready(function () {
 });
 
 
-const waitForElement = (selector, callback) => {
-    const interval = setInterval(() => {
-        const el = document.querySelector(selector);
-        if (el) {
-            clearInterval(interval);
-            callback(el);
-        }
-    }, 100); // check every 100ms
-};
+(function () {
+    const waitForElement = (selector, callback) => {
+        const interval = setInterval(() => {
+            const el = document.querySelector(selector);
+            if (el) {
+                clearInterval(interval);
+                callback(el);
+            }
+        }, 100);
+    };
 
-// Usage
-waitForElement("#tc-nav-menu-container", function (target) {
-    if (
+    waitForElement("#tc-nav-menu-container", function (target) {
+          if (
         window.innerWidth >= 769 &&
         window.TCIsAdmin?.() === 4 &&
         window.TCUserRoles === 15
@@ -351,7 +351,8 @@ waitForElement("#tc-nav-menu-container", function (target) {
         navbar.insertBefore(adminLi, navbar.lastElementChild || null);
         console.log("Admin functions menu added to navbar");
     }
-});
+    });
+})();
 
 jQuery(document).ready(function () {
   console.log("Inside temp.js - Document ready");
@@ -410,5 +411,3 @@ jQuery(document).ready(function () {
     document.body.insertAdjacentHTML("beforeend", footerHTML);
     console.log("Footer HTML added to body");
 });
-
-
