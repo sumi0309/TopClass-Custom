@@ -401,6 +401,12 @@ jQuery(document).ready(function () {
       } else {
         document.body.insertAdjacentHTML("beforeend", footerHTML);
       }
+      if(window.location.href.includes("searchCatalog") || window.location.href.includes("xLearnerActivities&template")) {
+        var tcMainContainer = document.querySelector("#tc-main-container");
+        if (tcMainContainer) {
+          tcMainContainer.style.height = "auto";
+        }
+      }
   }
   
   // Init
