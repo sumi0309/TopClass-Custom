@@ -361,6 +361,7 @@ nav a:focus {
   display:flex;
   flex-direction:column;
   gap: 60px;
+  height: inherit;
 }
 
 @media(max-width: 767px){
