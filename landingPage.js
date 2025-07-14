@@ -395,9 +395,14 @@ jQuery(document).ready(function () {
         </div>
       </footer>
     `;
-    document.body.insertAdjacentHTML("beforeend", footerHTML);
+      var mainContainer = document.querySelector("#tc-main-container");
+      if (mainContainer) {
+        mainContainer.insertAdjacentHTML("beforeend", footerHTML);
+      } else {
+        document.body.insertAdjacentHTML("beforeend", footerHTML);
+      }
   }
-
+  
   // Init
   waitForElement("#tc-nav-menu-container", handleAdminMenu);
   jQuery(injectFooter);
