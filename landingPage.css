@@ -105,7 +105,6 @@
     display:none !important;
 }
 #ChooseTopicsBanner{
-  z-index:1050 !important;
   margin-top: 130px !important;
 }
 }
@@ -139,11 +138,13 @@
 
 /* --- Footer Styles --- */
 .footer-custom {
+    position:relative;
     height: 200px;
     display:flex;
     flex-direction: column;
     background: #fff;
     padding-top: 20px;
+    z-index: 1048;
 }
 
 .footer-main {
@@ -345,4 +346,25 @@ nav a:focus {
 #tc-main-shortcuts{
   padding-top: 90px;
   position: absolute;
+}
+@media (min-width: 867px){
+  #tc-main-shortcuts, #tc-main-container-row-fluid{
+    top: 115px;
+}
+#tc-main-shortcuts{
+  padding-top: 90px;
+  position: absolute;
+}
+}
+
+#tc-main-container{
+  display:flex;
+  flex-direction:column;
+  gap: 60px;
+}
+
+@media(max-width: 767px){
+  #tc-main-container{
+    gap:150px;
+  }
 }
