@@ -356,16 +356,20 @@ nav a:focus {
   position: absolute;
 }
 }
-
 #tc-main-container{
   display:flex;
   flex-direction:column;
   gap: 60px;
   height: inherit;
 }
-
 @media(max-width: 767px){
   #tc-main-container{
     gap:150px;
   }
+}
+#TCSystemSettings > header{
+  position: relative;
+}
+#TCContentNavContainer{
+  padding-top:50px;
 }

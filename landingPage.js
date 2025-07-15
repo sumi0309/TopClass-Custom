@@ -276,7 +276,7 @@ jQuery(document).ready(function () {
   }
 
   // Admin menu handler
-  function handleAdminMenu(target) {
+  function handleAdminMenu() {
     if (
       window.innerWidth < 769 ||
       window.TCIsAdmin?.() !== 4 ||
@@ -411,5 +411,31 @@ jQuery(document).ready(function () {
   
   // Init
   waitForElement("#tc-nav-menu-container", handleAdminMenu);
-  jQuery(injectFooter);
+  var tcSystemSettings = document.querySelector("#TCSystemSettings");
+  var isReportPage = document.querySelector("body").classList.contains("TCReportsContainer");
+  var isBasePageEdit = document.querySelector("body").classList.contains("TCPageBaseEdit");
+  if(isBasePageEdit){
+    var accordianPanel = document.querySelector("#accordion-panel");
+    if (accordianPanel) {
+      accordianPanel.style.position = "absolute";
+      accordianPanel.style.marginTop = "42px";
+    }
+    var editDiv = document.querySelector("#tc-userlanding-edit");
+    if (editDiv) {
+      editDiv.style.marginTop = "100px";
+    }
+  }
+  if (isReportPage) {
+    var tcNavbar = document.querySelector("#tc-nav-menu-container");
+    if (tcNavbar) {
+      tcNavbar.style.display = "none";
+    }
+    var tcContentNavContainer = document.querySelector("#TCContentNavContainer");
+    if (tcContentNavContainer) {
+      tcContentNavContainer.style.marginTop = "75px";
+    }
+  }
+  if (!tcSystemSettings && !isReportPage && !isBasePageEdit) {
+    jQuery(injectFooter);
+  }
 })();
