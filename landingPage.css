@@ -368,7 +368,7 @@ nav a:focus {
   }
 }
 #TCSystemSettings > header{
-  position: relative;
+  position: inherit;
 }
 #TCContentNavContainer{
   padding-top:50px;
