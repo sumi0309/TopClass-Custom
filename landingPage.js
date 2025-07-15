@@ -401,10 +401,24 @@ jQuery(document).ready(function () {
       } else {
         document.body.insertAdjacentHTML("beforeend", footerHTML);
       }
+      const urlChecks = [
+        "searchCatalog",
+        "xLearnerActivities&template",
+        "expand-LandingForUser",
+        "object-list-classid=26",
+        "object-list-classid=68",
+        "notificationrulelist",
+        "notification-history",
+        "expand-CustomiseActivities",
+        "expand-Branding",
+        "CustomiseCookiePolicy"
+      ];
+      if (urlChecks.some(str => window.location.href.includes(str))) {
         var tcMainContainer = document.querySelector("#tc-main-container");
         if (tcMainContainer) {
           tcMainContainer.style.height = "auto";
         }
+      }
   }
   
   // Init
