@@ -287,6 +287,12 @@ jQuery(document).ready(function () {
     const navbar = document.querySelector("#sidr-id-tc-nav-menu-list");
     if (!navbar) return;
 
+    // Add Home Button to Navbar
+    const homeLi = document.createElement("li");
+    homeLi.className = "sidr-id-TCHomeLogo";
+    homeLi.innerHTML = `<a href="/">`;
+    navbar.insertBefore(homeLi, navbar.firstChild);
+
     // Find admin items (li with more than 1 child)
     const adminItems = Array.from(navbar.children).filter(
       (li) => li.childElementCount > 1

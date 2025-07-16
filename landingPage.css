@@ -74,7 +74,7 @@
     text-transform: capitalize;
   }
   #sidr-id-tc-nav-menu-list > li:hover {
-    background-color: #0757A8 !important;
+    background-color: #0757A8;
     z-index: 1;
   }
   #sidr-id-tc-nav-menu-list > li:hover > a {
@@ -84,6 +84,19 @@
   #sidr-id-tc-nav-menu-list > li:hover > ul {
     display: block !important;
   }
+  .sidr-id-TCHomeLogo {
+  background-image: url("https://demoaisp34.imiscloud.com/App_Themes/Quickstart-London-AA/images/template/ico_home.svg");
+  width: 22px;
+  height: 22px;
+  background-position: center;
+  margin-right: 10px !important;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.sidr-id-TCHomeLogo:hover {
+  background-color: white !important;
+  background-image: url("https://demoaisp34.imiscloud.com/App_Themes/Quickstart-London-AA/images/template/ico_home_roll.svg");
+}
   .simplebar-track {
     display:none !important;
   }
@@ -382,3 +395,6 @@ div#tc-main-container-fluid{
   flex-direction: column;
   justify-content: center;  
 }
+
+
+
