@@ -400,6 +400,8 @@ jQuery(document).ready(function () {
         document.body.insertAdjacentHTML("beforeend", footerHTML);
       } 
   }
+
+  injectFooter();
   
   // Init
   waitForElement("#tc-nav-menu-container", handleAdminMenu);
