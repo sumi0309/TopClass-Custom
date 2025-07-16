@@ -360,7 +360,7 @@ nav a:focus {
   display:flex;
   flex-direction:column;
   gap: 60px;
-  height: inherit;
+  height: auto;
 }
 @media(max-width: 767px){
   #tc-main-container{

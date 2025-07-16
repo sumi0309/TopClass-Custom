@@ -395,36 +395,15 @@ jQuery(document).ready(function () {
         </div>
       </footer>
     `;
-      var mainContainer = document.querySelector("#tc-main-container");
-      if (mainContainer) {
-        mainContainer.insertAdjacentHTML("beforeend", footerHTML);
-      } else {
+      var isLandingPage = document.querySelector("body").classList.contains("TCLandingBody");
+      if (isLandingPage) {
         document.body.insertAdjacentHTML("beforeend", footerHTML);
-      }
-      const urlChecks = [
-        "searchCatalog",
-        "xLearnerActivities&template",
-        "expand-LandingForUser",
-        "object-list-classid=26",
-        "object-list-classid=68",
-        "notificationrulelist",
-        "notification-history",
-        "expand-CustomiseActivities",
-        "expand-Branding",
-        "CustomiseCookiePolicy"
-      ];
-      if (urlChecks.some(str => window.location.href.includes(str))) {
-        var tcMainContainer = document.querySelector("#tc-main-container");
-        if (tcMainContainer) {
-          tcMainContainer.style.height = "auto";
-        }
-      }
+      } 
   }
   
   // Init
   waitForElement("#tc-nav-menu-container", handleAdminMenu);
-  var tcSystemSettings = document.querySelector("#TCSystemSettings");
-  var isReportPage = document.querySelector("body").classList.contains("TCReportsContainer");
+
   var isBasePageEdit = document.querySelector("body").classList.contains("TCPageBaseEdit");
   if(isBasePageEdit){
     var accordianPanel = document.querySelector("#accordion-panel");
@@ -437,6 +416,8 @@ jQuery(document).ready(function () {
       editDiv.style.marginTop = "100px";
     }
   }
+
+  var isReportPage = document.querySelector("body").classList.contains("TCReportsContainer");
   if (isReportPage) {
     var tcNavbar = document.querySelector("#tc-nav-menu-container");
     if (tcNavbar) {
@@ -446,8 +427,5 @@ jQuery(document).ready(function () {
     if (tcContentNavContainer) {
       tcContentNavContainer.style.marginTop = "75px";
     }
-  }
-  if (!tcSystemSettings && !isReportPage && !isBasePageEdit) {
-    jQuery(injectFooter);
   }
 })();
