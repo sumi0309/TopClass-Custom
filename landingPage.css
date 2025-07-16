@@ -338,6 +338,10 @@ nav a:focus {
   outline: none !important;
 }
 
+#tc-nav-menu{
+  background-color: #1a6308 !important;
+}
+
 /* --- Adjustments for other pages --- */
 #tc-main-shortcuts, #tc-main-container-row-fluid{
     top: 150px;
