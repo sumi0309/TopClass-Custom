@@ -287,12 +287,6 @@ jQuery(document).ready(function () {
     const navbar = document.querySelector("#sidr-id-tc-nav-menu-list");
     if (!navbar) return;
 
-    // Add Home Button to Navbar
-    const homeLi = document.createElement("li");
-    homeLi.className = "sidr-id-TCHomeLogo";
-    homeLi.innerHTML = `<a href="/">`;
-    navbar.insertBefore(homeLi, navbar.firstChild);
-
     // Find admin items (li with more than 1 child)
     const adminItems = Array.from(navbar.children).filter(
       (li) => li.childElementCount > 1
@@ -352,7 +346,7 @@ jQuery(document).ready(function () {
   }
 
   // Footer injection
-  function injectFooter() {
+  function injectItems() {
     const footerHTML = `
       <footer class="footer-custom">
         <div class="footer-main">
@@ -405,9 +399,16 @@ jQuery(document).ready(function () {
       if (isLandingPage) {
         document.body.insertAdjacentHTML("beforeend", footerHTML);
       } 
+
+    var navbar = document.querySelector("#sidr-id-tc-nav-menu-list");
+    if (!navbar) return;
+    const homeLi = document.createElement("li");
+    homeLi.className = "sidr-id-TCHomeLogo";
+    homeLi.innerHTML = `<a href="/">`;
+    navbar.insertBefore(homeLi, navbar.firstChild);
   }
 
-  injectFooter();
+  injectItems();
   
   // Init
   waitForElement("#tc-nav-menu-container", handleAdminMenu);
