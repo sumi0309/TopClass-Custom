@@ -271,6 +271,7 @@ jQuery(document).ready(function () {
       if (el) {
         clearInterval(interval);
         callback(el);
+        insertHomeLogo();
       }
     }, 100);
   }
@@ -406,11 +407,14 @@ jQuery(document).ready(function () {
   // Init
   waitForElement("#tc-nav-menu-container", handleAdminMenu);
 
-  var navbar = document.querySelector("#sidr-id-tc-nav-menu-list");
-  const homeLi = document.createElement("li");
-  homeLi.className = "sidr-id-TCHomeLogo";
-  homeLi.innerHTML = `<a href="/"></a>`;
-  navbar.insertBefore(homeLi, navbar.firstChild);
+  function insertHomeLogo() {
+    var navbar = document.querySelector("#sidr-id-tc-nav-menu-list");
+    if (!navbar) return;
+    const homeLi = document.createElement("li");
+    homeLi.className = "sidr-id-TCHomeLogo";
+    homeLi.innerHTML = `<a href="/"></a>`;
+    navbar.insertBefore(homeLi, navbar.firstChild);
+  }
 
   var isBasePageEdit = document.querySelector("body").classList.contains("TCPageBaseEdit");
   if(isBasePageEdit){
