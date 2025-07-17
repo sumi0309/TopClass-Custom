@@ -262,7 +262,10 @@ jQuery(document).ready(function () {
   jQuery(".AdClicks").each(bindHandlerToHref);
 });
 
-(function () {
+const currentUserType = window.TCUserType;
+
+if(!currentUserType.includes("Admin") && !currentUserType.includes("Manager")) {
+  (function () {
   // Utility: Wait for element, then run callback
   function waitForElement(selector, callback) {
     const interval = setInterval(() => {
@@ -274,6 +277,8 @@ jQuery(document).ready(function () {
       }
     }, 100);
   }
+
+
 
   // Admin menu handler
   function handleAdminMenu() {
@@ -517,3 +522,12 @@ function initSlider() {
 }
 
 initSlider();
+}
+
+
+if(currentUserType.includes("Admin") || currentUserType.includes("Manager")){
+  const cssRef = document.querySelector("#custom-css-ref");
+  if(cssRef){
+    cssRef.remove();
+  }
+}
