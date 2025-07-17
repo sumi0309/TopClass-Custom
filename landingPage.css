@@ -396,5 +396,77 @@ div#tc-main-container-fluid{
   justify-content: center;  
 }
 
+/* Slideshow on Login Page */
+.custom-slideshow {
+  overflow: hidden;
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+}
 
+.custom-slides {
+  display: flex;
+  transition: transform 0.7s ease-in-out;
+}
 
+.custom-slide {
+  flex-shrink: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-slide img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.custom-prev, .custom-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  width: 44px;
+  height: 44px;
+  z-index: 11;
+  opacity: 0.55;
+  background: none;
+  color: #f8f2f2;
+  font-size: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.custom-prev:focus, .custom-next:focus {
+  outline: none !important;
+}
+
+.custom-prev:hover, .custom-next:hover {
+  box-shadow: none !important;
+}
+
+.custom-prev { left: 0; justify-content: flex-start; }
+.custom-next { right: 0; justify-content: flex-end; }
+
+@media (max-width: 600px) {
+  .custom-slide img {
+    max-height: 180px;
+  }
+  .custom-prev, .custom-next {
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+  }
+}
+
+.TCCustomContentHolder {
+  display: flex;
+  padding: 0 !important;
+}
+
+.TCVariant .TCMainContentHolder {
+  align-items: center;
+}

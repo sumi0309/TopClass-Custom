@@ -262,6 +262,67 @@ jQuery(document).ready(function () {
   jQuery(".AdClicks").each(bindHandlerToHref);
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const slidesWrapper = document.getElementById("slidesWrapper");
+  const slides = document.querySelectorAll("#slidesWrapper .custom-slide");
+  const prevBtn = document.querySelector(".custom-prev");
+  const nextBtn = document.querySelector(".custom-next");
+
+  let currentIndex = 0;
+  let interval;
+
+  function setWrapperWidth() {
+    slidesWrapper.style.width = `${slides.length * 100}%`;
+    slides.forEach((slide) => {
+      slide.style.width = `${100 / slides.length}%`;
+    });
+  }
+
+  function updateSlidePosition() {
+    slidesWrapper.style.transform = `translateX(-${
+      currentIndex * (100 / slides.length)
+    }%)`;
+  }
+
+  function showNextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlidePosition();
+  }
+
+  function showPrevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSlidePosition();
+  }
+
+  prevBtn.addEventListener("click", () => {
+    showPrevSlide();
+    resetInterval();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    showNextSlide();
+    resetInterval();
+  });
+
+  function startInterval() {
+    interval = setInterval(showNextSlide, 3500);
+  }
+
+  function resetInterval() {
+    clearInterval(interval);
+    startInterval();
+  }
+
+  setWrapperWidth();
+  updateSlidePosition();
+  startInterval();
+
+  window.addEventListener("resize", () => {
+    setWrapperWidth();
+    updateSlidePosition();
+  });
+});
+
 
 (function () {
   // Utility: Wait for element, then run callback
