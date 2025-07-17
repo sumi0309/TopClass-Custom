@@ -439,12 +439,13 @@ jQuery(document).ready(function () {
       tcContentNavContainer.style.marginTop = "75px";
     }
   }
+})();
 
-  document.addEventListener("DOMContentLoaded", function () {
-  const slidesWrapper = document.getElementById("slidesWrapper");
-  const slides = document.querySelectorAll("#slidesWrapper .custom-slide");
-  const prevBtn = document.querySelector(".custom-prev");
-  const nextBtn = document.querySelector(".custom-next");
+function initSlider() {
+    const slidesWrapper = document.getElementById("slidesWrapper");
+    const slides = document.querySelectorAll("#slidesWrapper .custom-slide");
+    const prevBtn = document.querySelector(".custom-prev");
+    const nextBtn = document.querySelector(".custom-next");
 
   let currentIndex = 0;
   let interval;
@@ -499,6 +500,6 @@ jQuery(document).ready(function () {
     setWrapperWidth();
     updateSlidePosition();
   });
-});
+}
 
-})();
+initSlider();
