@@ -440,6 +440,7 @@ jQuery(document).ready(function () {
     }
   }
 
+  document.addEventListener("DOMContentLoaded", function () {
   const slidesWrapper = document.getElementById("slidesWrapper");
   const slides = document.querySelectorAll("#slidesWrapper .custom-slide");
   const prevBtn = document.querySelector(".custom-prev");
@@ -498,5 +499,6 @@ jQuery(document).ready(function () {
     setWrapperWidth();
     updateSlidePosition();
   });
+});
 
 })();
